@@ -5,7 +5,27 @@ const bodyParser = require("body-parser");
 
 
 //connect to mongoose
-mongoose.connect(process.env.MONGODB_URI);
+//mongoose.connect(MONGODB_CONNECT_URI);
+
+// Load environment variables
+require('dotenv').config();
+
+// Define the port
+const port = process.env.PORT || 3000;
+
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_CONNECT_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log("MongoDB connected");
+    
+    app.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
+    });
+  })
+  .catch(err => {
+    console.error("Error connecting to MongoDB:", err);
+    process.exit(1);
+  });
 
 //create dataschema
 const userSchema={
