@@ -5,27 +5,27 @@ const bodyParser = require("body-parser");
 
 
 //connect to mongoose
-//mongoose.connect(MONGODB_CONNECT_URI);
+mongoose.connect('mongodb+srv://sumedhbhatkar80:mPqt9HvRshpHGa9r@Cluster0.eapj2k8.mongodb.net/PKTP?retryWrites=true&w=majority');
 
 // Load environment variables
-require('dotenv').config();
+// require('dotenv').config();
 
-// Define the port
-const port = process.env.PORT || 3000;
+// // Define the port
+// const port = process.env.PORT || 3000;
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGODB_CONNECT_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log("MongoDB connected");
+// // Connect to MongoDB
+// mongoose.connect(process.env.MONGODB_CONNECT_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => {
+//     console.log("MongoDB connected");
     
-    app.listen(port, () => {
-      console.log(`Server is running on port ${port}`);
-    });
-  })
-  .catch(err => {
-    console.error("Error connecting to MongoDB:", err);
-    process.exit(1);
-  });
+//     app.listen(port, () => {
+//       console.log(`Server is running on port ${port}`);
+//     });
+//   })
+//   .catch(err => {
+//     console.error("Error connecting to MongoDB:", err);
+//     process.exit(1);
+//   });
 
 //create dataschema
 const userSchema={
