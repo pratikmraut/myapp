@@ -88,8 +88,8 @@ const valueGenerator = (angleValue) => {
       popup.classList.add("popup");
       popup.innerHTML = `
         <div class="popup-content">
-          <p>Congratulations Your Discount Amount is : ${discountAmount}</p>
-          <p>Note: PlZ ensure to capture a SS and send it to our RM.</p>
+          <p>Congratulations Discount Amount: ${discountAmount}</p>
+          <p>Please Take a ScreenShot</p>
           <button class="popup-button">OK</button>  
         </div>`;
       document.body.appendChild(popup);

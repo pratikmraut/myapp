@@ -115,11 +115,47 @@
     </style>
 </head>
 
+<!--  Old form 
+<body onload="clearForm()">
+    <section class="contact">
+        <h2>Make This HOLI Special</h2>
+        Form content 
+        <form id="myForm" action="/" method="POST">
+            <div class="input-box">
+                <div class="input-field field">
+                    <input name="name" type="text" placeholder="Full name" id="name" class="item" autocomplete="off"
+                        clear required>
+                </div>
+                <div class="input-field field">
+                    <input type="text" name="phoneNumber" placeholder="Phone Number" id="phone" class="item"
+                        autocomplete="off" required>
+                </div>
+            </div>
+
+            <div class="textarea-field field">
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message" class="item"
+                    autocomplete="off"></textarea>
+            </div>
+
+            <button type="submit">Send Message</button>
+        </form>
+        <script>
+            function clearForm() {
+              document.getElementById("myForm").reset();
+            }
+          </script>
+    </section>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</body> -->
+
+
+<!-- New form to add the funtionality for clear the form details -->
 <body>
     <section class="contact">
         <h2>Make This HOLI Special</h2>
         <!-- Form content -->
-        <form action="/" method="POST">
+        <form id="myForm" action="/" method="POST">
             <div class="input-box">
                 <div class="input-field field">
                     <input name="name" type="text" placeholder="Full name" id="name" class="item" autocomplete="off"
@@ -140,4 +176,25 @@
         </form>
     </section>
 
+    <script>
+        // Function to clear the form fields
+        function clearForm() {
+            document.getElementById("myForm").reset();
+        }
+
+        // Attach event listener to detect when the page is shown from the session history
+        window.addEventListener('pageshow', function(event) {
+            var historyTraversal = event.persisted || 
+                                   (typeof window.performance != 'undefined' && 
+                                    window.performance.navigation.type === 2);
+            if (historyTraversal) {
+                // Call clearForm() when navigating back
+                clearForm();
+            }
+        });
+    </script>
+
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+</body>
+
+</html>
