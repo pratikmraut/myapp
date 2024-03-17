@@ -77,20 +77,12 @@ const valueGenerator = (angleValue) => {
   }
 };
 
-
-// Flag to track if the wheel has been spun
-let spun = false;
-
 //Spinner count
 let count = 0;
 //100 rotations for animation and last rotation for result
 let resultValue = 101;
 //Start spinning
 spinBtn.addEventListener("click", () => {
-
-  // Check if the wheel has already been spun
-  if (!spun) {
-    spun = true; // Set the flag to true after the first spin
   spinBtn.disabled = true;
   //Empty final value
   finalValue.innerHTML = `<p>Good Luck! 🍀</p>`;
@@ -117,10 +109,5 @@ spinBtn.addEventListener("click", () => {
       resultValue = 101;
     }
   }, 10);
-} else {
-  // Redirect to index.html if the wheel has already been spun
-  window.location.href = "index.html";
-}
 });
-
 

@@ -98,7 +98,10 @@ const valueGenerator = (angleValue) => {
         popup.remove();
         spinBtn.disabled = false;
         window.location.replace('https://wa.link/y7ovdb');
-        
+        //window.location.href = "/";
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 5000); // 5000 milliseconds delay (adjust as needed)
       });
       break;
     }
