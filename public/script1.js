@@ -101,7 +101,7 @@ const valueGenerator = (angleValue) => {
         //window.location.href = "/";
         setTimeout(() => {
           window.location.href = '/';
-        }, 5000); // 5000 milliseconds delay (adjust as needed)
+        }, 3000); // 3000 milliseconds delay (adjust as needed)
       });
       break;
     }
